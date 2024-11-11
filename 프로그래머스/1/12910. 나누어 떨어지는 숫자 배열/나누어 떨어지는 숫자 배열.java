@@ -1,20 +1,30 @@
-import java.util.*; // java.util 패키지의 모든 클래스 import
+import java.util.*;
 
 class Solution {
-    public ArrayList<Integer> solution(int[] arr, int divisor) {
-        ArrayList<Integer> answer = new ArrayList<>();
+    public int[] solution(int[] arr, int divisor) {
+        int count = 0;
         
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % divisor == 0) {
-                answer.add(arr[i]);
+        for (int num : arr) {
+            if (num % divisor == 0) {
+                count ++;
             }
         }
         
-        if (answer.size() == 0) {
-            answer.add(-1);
+        int[] answer = new int[count];
+        
+        int index = 0;
+        
+        for (int num : arr) {
+            if (num % divisor == 0) {
+                answer[index++] = num;
+            }
         }
         
-        Collections.sort(answer);
+        if (answer.length == 0) {
+            return new int[]{-1};
+        }
+        
+        Arrays.sort(answer);
         
         return answer;
     }
