@@ -4,18 +4,18 @@ class Solution {
     public int solution(int[] nums) {
         int answer = 0;
         
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashSet<Integer> set = new HashSet<>();
         
         for (int n : nums) {
-            map.put(n, map.getOrDefault(n, 0) + 1);
+            set.add(n);
         }
         
         int length = nums.length / 2;
         
-        if (map.size() >= length) {
+        if (set.size() >= length) {
             answer = length;
         } else {
-            answer = map.size();    
+            answer = set.size();    
         }
         
         return answer;
