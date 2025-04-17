@@ -8,7 +8,7 @@ class Solution {
             int num = num1;
             num1 = answer;
             
-             answer = (num + num1) % 1234567;
+            answer = (num + num1) % 1234567;
             
             count++;
         }
